@@ -52,7 +52,7 @@ if (newBlogBtn) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const blogUrl = "https://66e7e6a5b17821a9d9da6f39.mockapi.io/blogs";
+    // const blogUrl = "https://66e7e6a5b17821a9d9da6f39.mockapi.io/blogs";
     
     fetch(blogUrl)
         .then(res => res.json())
@@ -117,12 +117,10 @@ if (submit) {
         })
         .then((response) => response.json())
         .then((json) => {
-            console.log(json);
-            localStorage.setItem('userName', name.value);
-            localStorage.setItem('email', email.value);
-            localStorage.setItem('pass', pass.value);
-
-
+            // console.log(json);
+            localStorage.setItem('userName', json.name); 
+            localStorage.setItem('email', json.email);   
+            localStorage.setItem('pass', json.pass);    
             window.location.href = "mainPage.html";
         })
     });
@@ -152,8 +150,7 @@ if (loginSubmit) {
                     item.email === emailValue && item.pass === passValue
                 );
                 if (check) {
-                    localStorage.setItem('userName', check.name);
-
+                    localStorage.setItem('userName', check.name);  
                     window.location.href = "mainPage.html";
                 } else {
                     alert("Login failed: Invalid email or password");
@@ -165,17 +162,16 @@ if (loginSubmit) {
 
 //name setting 
 // let infoname = document.getElementById("infoName")
+        // document.getElementById("infoName").textContent = `Your UserName : ${userName}`
+
 
 document.addEventListener("DOMContentLoaded", () => {
-    // let userName = localStorage.getItem('userName');
-    
+    let userName = localStorage.getItem('userName');
     
     if (userName) {
         document.getElementById("nameDisplayed").textContent = `Hello, ${userName}`;
-        // document.getElementById("infoName").textContent = `Your UserName : ${userName}`
     } else {
-
-        document.getElementById("nameDisplayed").textContent = "Hello in Bloogy!";
+        document.getElementById("nameDisplayed").textContent = "Hello in Bloggy!";
     }
 });
 
