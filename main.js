@@ -160,9 +160,6 @@ if (loginSubmit) {
     });
 }
 
-//name setting 
-// let infoname = document.getElementById("infoName")
-        // document.getElementById("infoName").textContent = `Your UserName : ${userName}`
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -170,11 +167,29 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (userName) {
         document.getElementById("nameDisplayed").textContent = `Hello, ${userName}`;
+        // document.getElementById("infoName").textContent = `Your Registered Name : ${userName}` 
     } else {
         document.getElementById("nameDisplayed").textContent = "Hello in Bloggy!";
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    let userName = localStorage.getItem('userName');
+    let userEmail = localStorage.getItem('email');
+    let userPass = localStorage.getItem('pass');
+
+    if (userName) {
+        document.getElementById("infoName").textContent = userName;
+    }
+
+    if (userEmail) {
+        document.getElementById("infoEmail").textContent = userEmail;
+    }
+
+    if (userPass) {
+        document.getElementById("infoPass").textContent = userPass;
+    }
+});
 
 
 

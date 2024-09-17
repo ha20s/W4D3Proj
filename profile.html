@@ -35,9 +35,34 @@
         </nav>
     </header>
 
-    <section class="d-flex justify-content-center align-items-center" style="height: 80vh;">
-        <div class="card p-5 shadow-lg">
-            <h2 class="card-title text-center" id="infoName">\name</h2>
+    <section class="d-flex justify-content-around align-items-center " style="min-height: 80vh;">
+        <div class="card p-4 shadow-lg rounded" >
+            <div class="text-center p-3">
+                <h1 class="text-muted"> Review Your Registered Information</h1>
+            </div>
+    <div class="container">
+        <div class="d-flex ">
+            <h5>Name:</h5>
+            <h5 id="infoName">\name</h5>
+        </div>
+
+        <div class="d-flex  ">
+            <h5>Email:</h5>
+            <h5 id="infoEmail" >\email</h5>
+        </div>
+
+        <div class="d-flex  ">
+            <h5>Password:</h5>
+            <h5 id="infoPass" >\pass</h5>
+        </div>
+
+    </div>
+            <div class="text-center py-2">
+                <p class="text-danger fw-bold">Editing this information is not allowed.</p>
+                <p><a href="mainPage.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold">Back to Blogs</a></p>
+
+            </div>
+
 
         </div>
     </section>
